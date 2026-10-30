@@ -1,0 +1,37 @@
+:root{--bg:#0b0f10;--card:#141a1c;--ink:#eef2f0;--mute:#8d9b97;--line:#26302f;--acc:#ffc933;--acc2:#38d6b1;--soft:#1b2426;--road:#2b3234;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:18px 16px 48px}
+h1{font-size:1.7rem;margin:.1em 0 .1em;letter-spacing:-.01em}
+h2{font-size:1.1rem;margin:0 0 8px}
+.s{color:var(--mute);margin:0 0 16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.lbl{color:var(--mute);font-size:.92rem}
+.pts{display:grid;grid-template-columns:90px 1fr 1fr auto;gap:8px;align-items:center;max-width:460px;margin-top:10px}
+.pts b{color:var(--mute);font-weight:500;font-size:.9rem}
+input{width:100%;font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[type=range]{padding:0;accent-color:var(--acc);height:28px}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--ink);padding:7px 12px}
+button.p{background:var(--acc);border-color:var(--acc);color:#241c00;font-weight:700}
+button:focus-visible,input:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.sc{overflow-x:auto}
+table{border-collapse:collapse;min-width:100%;text-align:right;font-variant-numeric:tabular-nums}
+th,td{padding:6px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--mute);font-weight:500}
+td.d{color:var(--acc);font-weight:700}
+.eq{font-family:Consolas,monospace;background:var(--soft);padding:10px 12px;border-radius:8px;overflow-x:auto;white-space:nowrap;margin:6px 0 14px}
+.err{color:#ff9d6b;font-weight:600}
+svg{width:100%;height:auto;display:block}
+.ctl{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin:10px 0}
+.ctl label{font-size:.9rem;color:var(--mute);display:block}
+.top{display:flex;gap:16px;flex-wrap:wrap;align-items:end;margin-bottom:6px}
+.top div{flex:1;min-width:150px}
+.ticket{display:flex;background:var(--soft);border-radius:12px;border:1px dashed var(--acc);overflow:hidden;margin-top:12px}
+.ticket>div{padding:12px 16px}
+.ticket .big{font-size:2.3rem;font-weight:800;color:var(--acc);line-height:1.1;font-variant-numeric:tabular-nums}
+.ticket .l{border-right:2px dashed var(--line);flex:1}
+.ticket .r{flex:1.4}
+.ticket small{color:var(--mute);display:block}
+@media(max-width:520px){.ticket{flex-direction:column}.ticket .l{border-right:0;border-bottom:2px dashed var(--line)}}

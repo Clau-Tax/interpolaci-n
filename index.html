@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tiempo de viaje – Interpolación de Newton</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<h1>Mi ruta: ¿a qué hora paso por ahí?</h1>
+<p class="s">Anota en qué minuto pasaste por algunas paradas de tu viaje. El programa usa la interpolación de Newton para estimar la hora en cualquier otro kilómetro.</p>
+
+<section>
+<h2>Tu ruta</h2>
+<div id="road"></div>
+<div class="top">
+ <div><label class="lbl" for="hs">Hora de salida</label><input id="hs" type="time" value="07:00"></div>
+ <div><label class="lbl" for="xe">Kilómetro que quieres consultar</label><input id="xe" type="number" step="any" value="30"></div>
+</div>
+<input id="sl" type="range" aria-label="Mover el carro por la ruta" min="0" max="40" step="0.1" value="30">
+<div id="re"></div>
+</section>
+
+<section>
+<h2>1. Tus paradas</h2>
+<p class="lbl" style="margin:0">Km = kilómetro de la ruta (0 es la salida). Min = minutos desde que saliste. Todo se actualiza al instante.</p>
+<div class="pts" id="pts"></div>
+<div class="row">
+<button id="add">+ Agregar parada</button>
+<button class="p" id="go">Calcular</button>
+<button id="ej">Cargar ejemplo</button>
+</div>
+<div id="err" class="err" style="margin-top:10px"></div>
+</section>
+
+<div id="out" hidden>
+<section><h2>2. Tabla de diferencias divididas</h2>
+<p class="lbl">Cada columna se obtiene restando dos vecinos de la anterior y dividiendo entre la diferencia de km. Los números amarillos (primera fila) son los coeficientes b₀, b₁, b₂…</p>
+<div class="sc" id="tab"></div>
+<div class="lbl" style="margin-top:14px">Así se calcula cada coeficiente:</div>
+<div class="eq" id="pasos" style="white-space:normal;line-height:1.9"></div></section>
+
+<section><h2>3. Polinomio del viaje</h2>
+<p class="lbl" style="margin:0 0 8px">En la fórmula, x es el kilómetro y P(x) son los minutos.</p>
+<div class="lbl">Forma de Newton</div><div class="eq" id="fn"></div>
+<div class="lbl">Forma expandida</div><div class="eq" id="fe"></div></section>
+
+<section><h2>4. Gráfica: minutos según el kilómetro</h2><div id="g"></div></section>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
