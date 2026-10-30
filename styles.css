@@ -2,7 +2,7 @@
 color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
-main{max-width:860px;margin:0 auto;padding:18px 16px 48px}
+main{max-width:1240px;margin:0 auto;padding:18px 16px 48px}
 h1{font-size:1.7rem;margin:.1em 0 .1em;letter-spacing:-.01em}
 h2{font-size:1.1rem;margin:0 0 8px}
 .s{color:var(--mute);margin:0 0 16px}
@@ -35,3 +35,17 @@ svg{width:100%;height:auto;display:block}
 .ticket .r{flex:1.4}
 .ticket small{color:var(--mute);display:block}
 @media(max-width:520px){.ticket{flex-direction:column}.ticket .l{border-right:0;border-bottom:2px dashed var(--line)}}
+
+/* ---------- Diseño por paneles ---------- */
+.ruta{display:grid;grid-template-columns:1fr;gap:16px}
+.ruta .rr .top{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.col section{margin-bottom:0}
+.ruta{margin-bottom:16px}
+.pasos{white-space:normal;line-height:1.9}
+@media(min-width:900px){
+  .ruta{grid-template-columns:1.5fr 1fr;align-items:center}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(min-width:900px){body{font-size:15.5px}h1{font-size:1.9rem}}

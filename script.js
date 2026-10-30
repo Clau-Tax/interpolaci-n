@@ -42,7 +42,7 @@ function calc(){
   $("fe").textContent="P(x) = "+(t.join("")||"0");
   window._c=c;window._x=x;window._P=P;
   const sl=$("sl");sl.min=x[0];sl.max=x[n-1];
-  ev();plot();$("out").hidden=false;
+  ev();plot();
 }
 const P_=v=>{const{_c:c,_x:x}=window;let r=c[c.length-1];for(let k=c.length-2;k>=0;k--)r=r*(v-x[k])+c[k];return r};
 const clock=min=>{const[hh,mm]=($("hs").value||"00:00").split(":").map(Number);let t=Math.round(hh*60+mm+min);t=((t%1440)+1440)%1440;return String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0")};
